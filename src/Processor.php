@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Components\PaymentProcessing;
+namespace SoftInvest\PaymentProcessing;
 
 use App\Components\PaymentProcessing\Processors\IPayment;
 use Illuminate\Http\Request;
