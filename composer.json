@@ -9,7 +9,7 @@
     }
   ],
   "keywords": [
-    "paymetn processing"
+    "payment processing"
   ],
   "require": {
     "php": ">=8.0"
