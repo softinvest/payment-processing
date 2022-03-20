@@ -1,0 +1,22 @@
+{
+  "name": "softinvest/payment-proessing",
+  "description": "Payment Processing Wrapper",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "softinvest",
+      "email": "gbe@tuta.io"
+    }
+  ],
+  "keywords": [
+    "paymetn processing"
+  ],
+  "require": {
+    "php": ">=8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SoftInvest\\PaymentProcessing\\": "src"
+    }
+  }
+}
