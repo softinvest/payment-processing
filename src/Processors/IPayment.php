@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Components\PaymentProcessing\Processors;
+namespace SoftInvest\PaymentProcessing\Processors;
 
 interface IPayment
 {
