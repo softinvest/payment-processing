@@ -2,8 +2,8 @@
 
 namespace SoftInvest\PaymentProcessing;
 
-use App\Components\PaymentProcessing\Processors\IPayment;
 use Illuminate\Http\Request;
+use SoftInvest\PaymentProcessing\Processors\IPayment;
 
 class Processor
 {
