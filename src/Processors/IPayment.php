@@ -15,4 +15,8 @@ interface IPayment
     public function outputFail(): void;
 
     public function outputSuccess(): void;
+
+    public function initiatePayment(int $userId, int $paymentSystemId, string $driver, string $currency,
+                                    float $amount,float $totalAmount, int $productTypeId, string $projectUuid,
+                                    array $payLoad):?string;
 }

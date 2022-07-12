@@ -19,6 +19,13 @@ class PaymentAbstract implements IPayment
         $this->request = $request;
     }
 
+    public function initiatePayment(int $userId, int $paymentSystemId, string $driver, string $currency,
+                                                          float $amount,float $totalAmount, int $productTypeId, string $projectUuid,
+                                                          array $payLoad):?string{
+        return null;
+
+    }
+
     protected function log(string $message): void
     {
         Log::channel(static::$logChannel)->info($message);
