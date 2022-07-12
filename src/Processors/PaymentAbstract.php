@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Log;
 
 class PaymentAbstract implements IPayment
 {
+    protected array $supports = [
+    ];
+
     protected static string $logChannel = 'emergency';
 
     protected Request $request;
@@ -58,6 +61,13 @@ class PaymentAbstract implements IPayment
         } else {
             $this->outputFail();
         }
+    }
+
+    public function isSupported(string $driver):bool{
+        if (!$this->supports){
+            return false;
+        }
+        return in_array($driver, $this->supports);
     }
 
     public function outputSuccess(): void
