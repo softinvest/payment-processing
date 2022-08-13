@@ -4,6 +4,7 @@ namespace SoftInvest\PaymentProcessing;
 
 use Illuminate\Http\Request;
 use SoftInvest\PaymentProcessing\Processors\IPayment;
+use SoftInvest\PaymentProcessing\Processors\PaymentAbstract;
 
 class Processor
 {
@@ -35,5 +36,30 @@ class Processor
     public function setRequest(Request $request): void
     {
         $this->request = $request;
+    }
+
+    /**
+     * @param string $driver
+     *
+     * @return ?PaymentAbstract
+     */
+    public static function findPaymentSystemByDriverName(string $driver): ?PaymentAbstract
+    {
+        $arr = [];
+        if ($handle = opendir(base_path('app') . '/Components/PaymentProcessors')) {
+            while (false !== ($entry = readdir($handle))) {
+                if ($entry != "." && $entry != "..") {
+                    $entry = str_replace('.php', '', $entry);
+
+                    $className = '\\App\\Components\\PaymentProcessors\\' . ucfirst($entry);
+                    $obj = new $className(new Request());
+                    if (method_exists($obj, 'isSupported') && $obj->isSupported($driver)) {
+                        return $obj;
+                    }
+                }
+            }
+            closedir($handle);
+        }
+        return null;
     }
 }
