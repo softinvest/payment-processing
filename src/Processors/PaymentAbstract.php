@@ -57,7 +57,7 @@ class PaymentAbstract implements IPayment
         return false;
     }
 
-    public function process(): string|bool
+    public function process(): ?string
     {
         return false;
     }

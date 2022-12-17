@@ -5,14 +5,17 @@
   "authors": [
     {
       "name": "softinvest",
-      "email": "c@bragin.su"
+      "email": "gbe@tuta.io"
     }
   ],
   "keywords": [
     "payment processing"
   ],
   "require": {
-    "php": ">=8.0"
+    "php": ">=7.4",
+    "ext-curl": "*",
+    "ext-openssl": "*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

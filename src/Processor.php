@@ -15,7 +15,11 @@ class Processor
         $this->request = $request;
     }
 
-    public function detect(string ...$classNames): IPayment|false
+    /**
+     * @param string ...$classNames
+     * @return IPayment|null
+     */
+    public function detect(string ...$classNames): ?IPayment
     {
         $request = $this->getRequest();
         foreach ($classNames as $className) {
@@ -25,14 +29,21 @@ class Processor
             }
         }
 
-        return false;
+        return null;
     }
 
+    /**
+     * @return Request
+     */
     public function getRequest(): Request
     {
         return $this->request;
     }
 
+    /**
+     * @param Request $request
+     * @return void
+     */
     public function setRequest(Request $request): void
     {
         $this->request = $request;

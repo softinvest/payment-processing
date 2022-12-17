@@ -8,7 +8,7 @@ interface IPayment
 
     public function detect(): bool;
 
-    public function process(): string|bool;
+    public function process();
 
     public function isAllowedIp(): bool;
 
