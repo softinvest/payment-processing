@@ -18,5 +18,5 @@ interface IPayment
 
     public function initiatePayment(int $userId, int $paymentSystemId, string $driver, string $currency, int $qty,
                                     float $amount,float $totalAmount, int $productTypeId, string $projectUuid,
-                                    array $payLoad):?string;
+                                    array $payLoad);
 }
